@@ -34,7 +34,14 @@ Every question is of the categorical~categorical type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+##Graphical Descriptive Results
 
+```{r}
+DataF = filter(FinalData ,sex=="gal") 
+barchartGC(~infected + treatment,data=DataF)
+barchartGC(~infected + treatment,data=DataF, type="percent", main="gal")
+
+```
 
 # Discussion and Conclusion
 
