@@ -18,6 +18,8 @@ FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
+In this clinical trial, is the effective preventing the targeted population from getting COVID 19?
+
 $H_0$: The null hypothesis is that among the target population, the vaccine has no effect on whether one contracts the virus or not.
 
 $H_A$: The alternative hypothesis is that among the target population, the vaccine has an effect on whether one contracts the virus or not.
