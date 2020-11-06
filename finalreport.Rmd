@@ -36,7 +36,12 @@ Every question is of the categorical~categorical type.
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+
+
 ##Graphical Descriptive Results
+
+# Female Report
+  
 
 ```{r}
 DataF = filter(FinalData ,sex=="gal") 
@@ -49,6 +54,8 @@ barchartGC(~infected + treatment,data=DataF, type="percent", main="gal")
 Among the females who contracted covid-19 twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect. 
 
 
+# Male Report
+
 ```{r}
 DataG = filter(FinalData,sex=="guy") 
 barchartGC(~infected + treatment,data=DataG)
@@ -58,6 +65,83 @@ barchartGC(~infected + treatment,data=DataG, type="percent", main="guys")
 
 It appears that the vaccine has a negative effect on the guys since they are more likely to get covid-19 if they receive the vaccine.
 
+
+#LGBTQ Report
+
+```{r}
+DataLGBTQ = filter (FinalData, LGBTQ=="gay")
+barchartGC(~infected + treatment, data= DataLGBTQ)
+barchartGC(~infected + treatment, data=DataLGBTQ, type="percent", main="gays")
+```
+
+
+From the graph above, it appears that the vaccine has a negative effect on gay population since there is more than 60 % of chance for them to get COVID if they receive the vaccine.
+  
+
+```{r}
+DataDrugUser = filter (FinalData, DrugUser=="yes")
+barchartGC(~infected + treatment, data= DataDrugUser)
+barchartGC(~infected + treatment, data= DataDrugUser, type="percent", main="DrugUser")
+```
+
+
+##Numerical Inferential Results
+
+```{r}
+DataF = filter(FinalData,sex=="gal")
+table1 <- xtabs(~infected + treatment, data=DataF)
+rowPerc(table1)
+colPerc(table1)
+```
+
+According to the above table, only 4.44% of females who received the drug contracted COVID, while 95.56% did not. 
+
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+```{r}
+DataG = filter(FinalData,sex=="guy")
+table1 <- xtabs(~infected + treatment, data=DataG)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+```{r}
+DataLGBTQ = filter(FinalData,LGBTQ=="gay")
+table1 <- xtabs(~infected + treatment, data=DataLGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+```{r}
+DataDrugUser = filter(FinalData,DrugUser=="yes")
+table1 <- xtabs(~infected + treatment, data=DataDrugUser)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 # Discussion and Conclusion
 
