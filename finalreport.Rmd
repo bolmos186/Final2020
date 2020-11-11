@@ -18,7 +18,7 @@ FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
-In this clinical trial, is the effective preventing the targeted population from getting COVID 19?
+In this clinical trial, is the vaccine effective in preventing the targeted population from getting COVID 19?
 
 $H_0$: The null hypothesis is that among the target population, the vaccine has no effect on whether one contracts the virus or not.
 
@@ -77,12 +77,18 @@ barchartGC(~infected + treatment, data=DataLGBTQ, type="percent", main="gays")
 
 From the graph above, it appears that the vaccine has a negative effect on gay population since there is more than 60 % of chance for them to get COVID if they receive the vaccine.
   
+# Druguser report  
+
+  
 
 ```{r}
 DataDrugUser = filter (FinalData, DrugUser=="yes")
 barchartGC(~infected + treatment, data= DataDrugUser)
 barchartGC(~infected + treatment, data= DataDrugUser, type="percent", main="DrugUser")
 ```
+  
+  
+It appears in the chart above that the vaccine had a positive effect on drug users because less than 40% of the population who received the vaccine got covid19.
 
 
 ##Numerical Inferential Results
