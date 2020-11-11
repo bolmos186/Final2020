@@ -109,6 +109,8 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p value is 3.626e-16 < 0.05 so the possibility of the vaccine being more effective for females than the placebo is extremely unlikely.
+
 ```{r}
 DataG = filter(FinalData,sex=="guy")
 table1 <- xtabs(~infected + treatment, data=DataG)
@@ -123,6 +125,9 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+
+The p value is 0.0006181 < 0.05 so the possibility of the vaccine being more effective for males than the placebo is extremely unlikely.
+
 
 ```{r}
 DataLGBTQ = filter(FinalData,LGBTQ=="gay")
@@ -140,6 +145,8 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p value is 1.05e-05 < 0.05 so the possibility of the vaccine being more effective for the LGBTQ population than the placebo is extremely unlikely.
+
 
 ```{r}
 DataDrugUser = filter(FinalData,DrugUser=="yes")
@@ -156,7 +163,9 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-
+  
+The p value is 0.003028 < 0.05 so the possibility of the vaccine being more effective for the Drug user population than the placebo is extremely unlikely. 
+  
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->

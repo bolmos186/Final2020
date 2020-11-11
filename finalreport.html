@@ -526,6 +526,7 @@ rowPerc(table1)</code></pre>
 ## sample estimates:
 ## odds ratio 
 ##  0.4889403</code></pre>
+<p>The p value is 3.626e-16 &lt; 0.05 so the possibility of the vaccine being more effective for females than the placebo is extremely unlikely.</p>
 <pre class="r"><code>DataG = filter(FinalData,sex==&quot;guy&quot;)
 table1 &lt;- xtabs(~infected + treatment, data=DataG)
 rowPerc(table1)</code></pre>
@@ -583,6 +584,7 @@ rowPerc(table1)</code></pre>
 ## sample estimates:
 ## odds ratio 
 ##   1.473872</code></pre>
+<p>The p value is 0.0006181 &lt; 0.05 so the possibility of the vaccine being more effective for males than the placebo is extremely unlikely.</p>
 <pre class="r"><code>DataLGBTQ = filter(FinalData,LGBTQ==&quot;gay&quot;)
 table1 &lt;- xtabs(~infected + treatment, data=DataLGBTQ)
 rowPerc(table1)</code></pre>
@@ -640,6 +642,7 @@ rowPerc(table1)</code></pre>
 ## sample estimates:
 ## odds ratio 
 ##   2.492206</code></pre>
+<p>The p value is 1.05e-05 &lt; 0.05 so the possibility of the vaccine being more effective for the LGBTQ population than the placebo is extremely unlikely.</p>
 <pre class="r"><code>DataDrugUser = filter(FinalData,DrugUser==&quot;yes&quot;)
 table1 &lt;- xtabs(~infected + treatment, data=DataDrugUser)
 rowPerc(table1)</code></pre>
@@ -697,6 +700,7 @@ rowPerc(table1)</code></pre>
 ## sample estimates:
 ## odds ratio 
 ##  0.5455093</code></pre>
+<p>The p value is 0.003028 &lt; 0.05 so the possibility of the vaccine being more effective for the Drug user population than the placebo is extremely unlikely.</p>
 </div>
 <div id="discussion-and-conclusion" class="section level1">
 <h1>Discussion and Conclusion</h1>
