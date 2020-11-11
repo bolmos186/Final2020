@@ -63,7 +63,7 @@ barchartGC(~infected + treatment,data=DataG, type="percent", main="guys")
 
 ```
 
-It appears that the vaccine has a negative effect on the guys since they are more likely to get covid-19 if they receive the vaccine.
+From the graph above, it appears that the vaccine has a negative effect on guys since there is more than a 55% chance for them to get COVID if they receive the vaccine.
 
 
 #LGBTQ Report
@@ -100,7 +100,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-According to the above table, only 4.44% of females who received the drug contracted COVID, while 95.56% did not. 
+According to the above table, only 4.44% of females who received the vaccine contracted COVID, while 95.56% did not. 
 
 
 ```{r}
@@ -116,6 +116,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+According to the above table, only 3.72% of guys who received the vaccine contracted COVID, while 96.28% did not. 
+
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
@@ -128,6 +130,9 @@ table1 <- xtabs(~infected + treatment, data=DataLGBTQ)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+According to the above table, only 7.97% of the LGBTQ population who received the vaccine contracted COVID, while 92.03% did not.   
+
 
 ```{r}
 chisq.test(table1)
@@ -142,6 +147,9 @@ table1 <- xtabs(~infected + treatment, data=DataDrugUser)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+According to the above table, only 3.63% of Drug users who received the vaccine contracted COVID, while 96.37% did not. 
+
 
 ```{r}
 chisq.test(table1)
