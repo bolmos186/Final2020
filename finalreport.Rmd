@@ -64,9 +64,10 @@ barchartGC(~infected + treatment,data=DataG, type="percent", main="guys")
 ```
 
 From the graph above, it appears that the vaccine has a negative effect on guys since there is more than a 55% chance for them to get COVID if they receive the vaccine.
+  
+  
 
-
-#LGBTQ Report
+# LGBTQ Report
 
 ```{r}
 DataLGBTQ = filter (FinalData, LGBTQ=="gay")
@@ -92,7 +93,9 @@ It appears in the chart above that the vaccine had a positive effect on drug use
 
 
 ##Numerical Inferential Results
-
+  
+# Female Results
+  
 ```{r}
 DataF = filter(FinalData,sex=="gal")
 table1 <- xtabs(~infected + treatment, data=DataF)
@@ -109,8 +112,11 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The p value is 3.626e-16 < 0.05 so the possibility of the vaccine being more effective for females than the placebo is extremely unlikely.
-
+This Chi square test goes into detail and gave us a p value of 2.2e-16<0.05. It shows us that the vaccine did make an effect in the female population.
+  
+# Male Results  
+  
+  
 ```{r}
 DataG = filter(FinalData,sex=="guy")
 table1 <- xtabs(~infected + treatment, data=DataG)
@@ -126,9 +132,11 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The p value is 0.0006181 < 0.05 so the possibility of the vaccine being more effective for males than the placebo is extremely unlikely.
+This Chi Square test goes into detail and gave us a P.Value of 0.0005801<0.05. It shows that the vaccine did make an effect in the male population.
 
-
+# LGBTQ Results  
+  
+  
 ```{r}
 DataLGBTQ = filter(FinalData,LGBTQ=="gay")
 table1 <- xtabs(~infected + treatment, data=DataLGBTQ)
@@ -145,8 +153,10 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The p value is 1.05e-05 < 0.05 so the possibility of the vaccine being more effective for the LGBTQ population than the placebo is extremely unlikely.
-
+This Chi Square test goes into detail and gave us a P. Value of 5.741e-06<0.05. It shows us that the vaccine did make an effect in the LGBTQ population. 
+  
+  
+# Drug User Report  
 
 ```{r}
 DataDrugUser = filter(FinalData,DrugUser=="yes")
@@ -164,8 +174,18 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
   
-The p value is 0.003028 < 0.05 so the possibility of the vaccine being more effective for the Drug user population than the placebo is extremely unlikely. 
+
+This chi square tests goes into detail and gave us a P. Value of 0.002273<0.05. It shows us that the vaccine did make an effect in the drug user population.
+
   
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+According to the charts and numerical results, it seems that the females that took the vaccine are less likely to contract covid19. From the women who took the vaccine only 33.11 got infected with covid19 and 50.31 were ok with the vaccine. According to the inferential test that was 95.56% that were not infected making the vaccine very effective among the female population. The p value 2.2-16<0,05, we reject the null hypothesis, the vaccine did have an effect in the female population it was positive for females and it helped them not contract covid19.
+
+According to the male data and numerical results, males who took the vaccine were contracting covid19, 58.16 of the males who took the vaccine contracted covid and only 48.54 were okay. From this data it seems that men are most likely to contract covid19 with the given vaccine. The p value was 6e-04<0.05, we reject the null hypothesis, the vaccine had an effect on males contracting the virus. It was a negative effect and if the males took the vaccine there was a high chance that they contracted covid19.
+
+According to the LGBTQ data 70.69 contracted covid19 with the treatment and only 49.54 were okay. From this data it sees that the vaccine had no positive effect in the LGBTQ community and people are still contracting the virus. The p value was 1.05e-05<0.05, we reject the null hypothesis the vaccine did have an effect on the LGBTQ contracting covid19, it was a negative effect because it seemed that with the vaccine they still contracted covid19.
+
+According to the data from the Drug users 33.33 contracted covid19 with the vaccine and 47.83 did not contract the virus with the vaccine. With this drug user date we came close to having the same results from people infected and people who got covid19, however if we take the p value of the chi squared, we can now determine the effect of the vaccine. Since the p value is 0.002273<0.05 then we reject the null hypothesis and we can say that the vaccine did not have an effect on drug users contracting covid19. It was a negative effect because drug users still contracted covid19 with the vaccine.
